@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OptiCrop - Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="navbar">
+    <a href="{{ url_for('home') }}" class="active">Home</a>
+    <a href="{{ url_for('about') }}">About</a>
+    <a href="{{ url_for('findyourcrop') }}">FindYourCrop</a>
+  </div>
+
+  <div class="hero">
+    <div class="hero-controls">
+      <div class="btn-circle">&#9679;</div>
+      <div class="btn-circle">&#8722;</div>
+    </div>
+    <div class="hero-content">
+      <h2>Opti Crop Agricultural Optimisation</h2>
+      <p>The main purpose of the OptiCrop aims to develop an advanced software system that
+        utilizes data-driven insights to optimize agricultural production for different crops.</p>
+    </div>
+    <div class="hero-watermark">opti-crop</div>
+  </div>
+</body>
+</html>

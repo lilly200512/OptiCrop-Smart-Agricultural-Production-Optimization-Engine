@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OptiCrop - Find Your Crop</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="navbar">
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('about') }}">About</a>
+    <a href="{{ url_for('findyourcrop') }}" class="active">FindYourCrop</a>
+  </div>
+
+  <div class="crop-page">
+    <div class="banner">
+      <h1>Find Your Best Crop Here</h1>
+    </div>
+
+    <div class="crop-form-wrap">
+      <form class="crop-form" action="{{ url_for('predict') }}" method="post">
+        <h3>Please enter the conditions</h3>
+
+        <label for="nitrogen">nitrogen:</label>
+        <input type="text" id="nitrogen" name="nitrogen" placeholder="nitrogen" required="required"/>
+
+        <label for="phosphorous">phosphorous:</label>
+        <input type="text" id="phosphorous" name="phosphorous" placeholder="phosphorous" required="required"/>
+
+        <label for="potassium">potassium:</label>
+        <input type="text" id="potassium" name="potassium" placeholder="potassium" required="required"/>
+
+        <label for="temperature">temperature:</label>
+        <input type="text" id="temperature" name="temperature" placeholder="temperature" required="required"/>
+
+        <label for="humidity">humidity:</label>
+        <input type="text" id="humidity" name="humidity" placeholder="humidity" required="required"/>
+
+        <label for="ph">ph:</label>
+        <input type="text" id="ph" name="ph" placeholder="ph" required="required"/>
+
+        <label for="rainfall">rainfall:</label>
+        <input type="text" id="rainfall" name="rainfall" placeholder="rainfall" required="required"/>
+
+        <button type="submit" class="predict-btn">Predict</button>
+      </form>
+    </div>
+
+    <div class="result-bar {% if not prediction_text %}empty{% endif %}">
+      {{ prediction_text if prediction_text else 'placeholder' }}
+    </div>
+  </div>
+</body>
+</html>

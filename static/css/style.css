@@ -1,0 +1,226 @@
+/* ==========================================================================
+   OptiCrop - Smart Agricultural Production Optimization Engine
+   Shared stylesheet
+   ========================================================================== */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #1c1c1c;
+}
+
+/* ---------- Top navigation ---------- */
+.navbar {
+  display: flex;
+  background: #1c1c1c;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+}
+
+.navbar a {
+  color: #f2f2f2;
+  text-decoration: none;
+  padding: 16px 26px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navbar a:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.navbar a.active {
+  background: #2e8b57;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---------- Home page hero (farmland, CSS-generated) ---------- */
+.hero {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(20,40,20,0.15) 0%, rgba(20,40,20,0.55) 100%),
+    repeating-linear-gradient(100deg,
+      #9fae6d 0px, #9fae6d 46px,
+      #86995a 46px, #86995a 92px,
+      #7a8f4e 92px, #7a8f4e 138px,
+      #93a562 138px, #93a562 184px);
+}
+
+.hero::before {
+  /* soft sky gradient at the top of the field to suggest an aerial farm shot */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #d9e4c8 0%, rgba(217,228,200,0) 35%);
+  opacity: 0.35;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 40px 48px;
+}
+
+.hero-content h2 {
+  margin: 0 0 6px 0;
+  font-size: 26px;
+  color: #16281a;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.4);
+}
+
+.hero-content p {
+  max-width: 640px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #1c2b1c;
+}
+
+.hero-watermark {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1;
+  font-size: 72px;
+  letter-spacing: 14px;
+  color: rgba(60, 75, 55, 0.45);
+  font-weight: 300;
+  user-select: none;
+}
+
+.hero-controls {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 3;
+}
+
+.hero-controls .btn-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  font-size: 15px;
+}
+
+/* ---------- About page ---------- */
+.about-copy {
+  padding: 24px 32px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.about-copy h2 {
+  margin-top: 0;
+}
+
+.about-hero {
+  position: relative;
+  min-height: 420px;
+  background:
+    linear-gradient(180deg, rgba(40,30,10,0.15) 0%, rgba(30,20,10,0.55) 100%),
+    linear-gradient(180deg, #9fb6c9 0%, #c9d6bf 40%, #d9c877 60%, #b89c4a 100%);
+  overflow: hidden;
+}
+
+.about-hero svg { width: 100%; height: 100%; display: block; }
+
+/* ---------- FindYourCrop page ---------- */
+.crop-page {
+  position: relative;
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(20,40,10,0.25) 100%),
+    linear-gradient(180deg, #8ec9ef 0%, #bfe3f5 30%, #6b9e4a 32%, #79ab52 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.banner {
+  background: #f5e642;
+  padding: 18px 40px;
+  text-align: right;
+}
+
+.banner h1 {
+  margin: 0;
+  font-style: italic;
+  font-size: 32px;
+  color: #d9541e;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+}
+
+.crop-form-wrap {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 24px 60px;
+}
+
+.crop-form {
+  background: rgba(255,255,255,0.0);
+  width: 320px;
+}
+
+.crop-form h3 {
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.crop-form label {
+  display: block;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 4px;
+  color: #16281a;
+}
+
+.crop-form input[type="text"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 14px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.85);
+  font-size: 14px;
+}
+
+.predict-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #2f6fb3;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.predict-btn:hover { background: #285e97; }
+
+.result-bar {
+  background: #111;
+  color: #fff;
+  font-style: italic;
+  font-weight: 600;
+  padding: 14px 24px;
+  font-size: 16px;
+}
+
+.result-bar.empty { visibility: hidden; }
